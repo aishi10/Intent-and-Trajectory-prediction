@@ -1,6 +1,5 @@
 # SafePath: VRU Intent & Trajectory Prediction System
 
-**GitHub Repository:** [Insert Public GitHub Link Here]
 
 Demo: https://intent-and-trajectory-prediction-dq.vercel.app/
 
