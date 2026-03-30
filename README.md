@@ -2,6 +2,8 @@
 
 **GitHub Repository:** [Insert Public GitHub Link Here]
 
+Demo: https://intent-and-trajectory-prediction-dq.vercel.app/
+
 ## Project overview
 
 SafePath is a multimodal trajectory forecasting system for **vulnerable road users (VRUs)** in urban traffic scenes. The project focuses on predicting the future motion and intent of:
