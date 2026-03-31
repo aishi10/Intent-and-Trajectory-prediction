@@ -1,5 +1,5 @@
 from __future__ import annotations
-
+import json
 import argparse
 import os
 from pathlib import Path
@@ -44,6 +44,17 @@ def main() -> None:
     args = parser.parse_args()
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    if not os.path.exists(args.checkpoint):
+        print("⚠️ Checkpoint not found!")
+        print("👉 Running in DEMO mode using existing outputs")
+        sample_image = Path("val_sample_0000.png")
+        if sample_image.exists():
+            print(f"✅ Demo image found: {sample_image}")
+            print("👉 Open this image to view sample output")
+        else:
+            print("❌ No demo image found. Please train the model first:")
+            print("   python train_phase4.py")
+        return
     model, checkpoint = load_phase4_checkpoint(args.checkpoint, device)
     dataset = build_phase4_dataset(
         data_root=args.data_root,
@@ -123,4 +134,5 @@ def main() -> None:
 
 
 if __name__ == "__main__":
+    print("🚀 Script started")
     main()
